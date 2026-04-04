@@ -1,9 +1,9 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Maria Fernanda\\Documents\\GitHub\\HeadFirstCSharp\\chapter_02\\FirstConsoleApp\\",
+  "WorkspaceRootPath": "C:\\Users\\Maria Fernanda\\Documents\\GitHub\\HeadFirst_CSharp\\chapter_02\\FirstConsoleApp\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A36D2F99-66C5-4F91-80D0-60CA50CDBB2C}|FirstConsoleApp\\FirstConsoleApp.csproj|c:\\users\\maria fernanda\\documents\\github\\headfirstcsharp\\chapter_02\\firstconsoleapp\\firstconsoleapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{A36D2F99-66C5-4F91-80D0-60CA50CDBB2C}|FirstConsoleApp\\FirstConsoleApp.csproj|c:\\users\\maria fernanda\\documents\\github\\headfirst_csharp\\chapter_02\\firstconsoleapp\\firstconsoleapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A36D2F99-66C5-4F91-80D0-60CA50CDBB2C}|FirstConsoleApp\\FirstConsoleApp.csproj|solutionrelative:firstconsoleapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -20,9 +20,9 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Maria Fernanda\\Documents\\GitHub\\HeadFirstCSharp\\chapter_02\\FirstConsoleApp\\FirstConsoleApp\\Program.cs",
+              "DocumentMoniker": "C:\\Users\\Maria Fernanda\\Documents\\GitHub\\HeadFirst_CSharp\\chapter_02\\FirstConsoleApp\\FirstConsoleApp\\Program.cs",
               "RelativeDocumentMoniker": "FirstConsoleApp\\Program.cs",
-              "ToolTip": "C:\\Users\\Maria Fernanda\\Documents\\GitHub\\HeadFirstCSharp\\chapter_02\\FirstConsoleApp\\FirstConsoleApp\\Program.cs",
+              "ToolTip": "C:\\Users\\Maria Fernanda\\Documents\\GitHub\\HeadFirst_CSharp\\chapter_02\\FirstConsoleApp\\FirstConsoleApp\\Program.cs",
               "RelativeToolTip": "FirstConsoleApp\\Program.cs",
               "ViewState": "AgIAABgAAAAAAAAAAAAYwA4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
