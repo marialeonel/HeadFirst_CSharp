@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace PickRandomCards
+namespace PickACardUI
 {
-    public class CardPicker
+    class CardPicker
     {
         static Random random = new Random();
         public static string[] PickSomeCards (int numberOfCards)
