@@ -18,6 +18,7 @@ namespace Casino
                 string howMuch = Console.ReadLine();
 
                 if (int.TryParse(howMuch, out int amount))
+                
                 {
                     int pot = player.GiveCash(amount) * 2;
                     if (pot > 0) {
