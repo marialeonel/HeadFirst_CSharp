@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Runtime.CompilerServices;
-using System.Text;
-
-namespace AbilityScore
+﻿namespace AbilityScore
 {
     public class AbilityScoreCalculator
     {
@@ -16,7 +11,7 @@ namespace AbilityScore
         public void CalculateAbilityScore()
         {
             double divided = RollResult / DividedBy;
-            int added = AddAmount += (int)divided;
+            int added = AddAmount + (int)divided;
             if (added < Minimum)
                 Score = Minimum;
             else

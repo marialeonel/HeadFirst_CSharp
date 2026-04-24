@@ -12,7 +12,7 @@ while (true)
     Console.WriteLine($"Calculated ability score: {calculator.Score}");
     Console.WriteLine("Press Q to quit, any other key to continue.");
     char keyChar = Console.ReadKey(true).KeyChar;
-    if ((keyChar == 'Q') || (keyChar == 'q')) return;
+    0if ((keyChar == 'Q') || (keyChar == 'q')) return;
 }
 
 static int ReadInt(int lastUsedValue, string prompt)
