@@ -1,13 +1,5 @@
-﻿using System.Text;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace SloppyJoe
 {
@@ -24,13 +16,24 @@ namespace SloppyJoe
 
         private void MakeTheMenu()
         {
-            MenuItem[] menuItems = new MenuItem[5];
-            String guacamolePrice;
+            var menuItems = CreateMenuItems();
+            var items = GetItemTextBlocks();
+            var prices = GetPriceTextBlocks();
 
-            for(int i = 0; i < 5; i++)
+            FillMenu(menuItems, items, prices);
+            CreateSpecialItem();
+            CreateGuacamoleOption();
+        }
+
+        private MenuItem[] CreateMenuItems()
+        {
+            MenuItem[] menuItems = new MenuItem[5];
+
+            for (int i = 0; i < 5; i++)
             {
                 menuItems[i] = new MenuItem();
-                if(i >= 3)
+
+                if (i >= 3)
                 {
                     menuItems[i].Breads = [
                         "plain bagel", "onion bagel", "pumpernickel bagel", "everything bagel"
@@ -40,24 +43,39 @@ namespace SloppyJoe
                 menuItems[i].Generate();
             }
 
-            var items = GridMenuItem.Children
+            return menuItems;
+        }
+
+        private List<TextBlock> GetItemTextBlocks()
+        {
+            return GridMenuItem.Children
                 .OfType<TextBlock>()
                 .Where(tb => tb.Name.StartsWith("item") && !tb.Name.EndsWith("6"))
                 .OrderBy(tb => tb.Name)
                 .ToList();
+        }
 
-            var prices = GridMenuItem.Children
+        private List<TextBlock> GetPriceTextBlocks()
+        {
+            return GridMenuItem.Children
                 .OfType<TextBlock>()
                 .Where(tb => tb.Name.StartsWith("price") && !tb.Name.EndsWith("6"))
                 .OrderBy(tb => tb.Name)
                 .ToList();
+        }
 
-            for (int i = 0; i < 5; i++)
+        private void FillMenu(MenuItem[] menuItems, List<TextBlock> items, List<TextBlock> prices)
+        {
+            int firstFiveMenuItemsCount =  5;
+            for (int i = 0; i < firstFiveMenuItemsCount; i++) 
             {
                 items[i].Text = menuItems[i].Description;
                 prices[i].Text = menuItems[i].Price.ToString();
             }
+        }
 
+        private void CreateSpecialItem()
+        {
             MenuItem specialMenuItem = new MenuItem()
             {
                 Proteins = ["Organic ham", "Mushroom patty", "Mortadella"],
@@ -69,11 +87,14 @@ namespace SloppyJoe
 
             item6.Text = specialMenuItem.Description;
             price6.Text = specialMenuItem.Price;
+        }
 
+        private void CreateGuacamoleOption()
+        {
             MenuItem guacamoleMenuItem = new MenuItem();
             guacamoleMenuItem.Generate();
-            guacamolePrice = guacamoleMenuItem.Price;
 
+            string guacamolePrice = guacamoleMenuItem.Price;
             guacamole.Text = $"Add guacamole for {guacamolePrice}";
         }
     }
