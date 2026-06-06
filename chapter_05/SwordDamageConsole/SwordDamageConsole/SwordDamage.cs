@@ -1,45 +1,59 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace SwordDamageConsole
+﻿namespace SwordDamageConsole
 {
-    public class SwordDamage
+    class SwordDamage
     {
-        public const int BASE_DAMAGE = 3;
-        public const int FLAME_DAMAGE = 2;
+        private const int BASE_DAMAGE = 3;
+        private const int FLAME_DAMAGE = 2;
 
-        public int Roll;
-        public decimal MagicMultiplier = 1M;
-        public int FlamingDamage = 0;
-        public int Damage;
+        public int Damage { get; private set; }
+        private int roll;
 
-        public void CalculateDamage()
+        public int Roll
         {
-            Damage = (int)(Roll * MagicMultiplier) + BASE_DAMAGE + FlamingDamage;
+            get { return roll; }
+            set
+            {
+                roll = value;
+                CalculateDamage();
+            }
         }
 
-        public void SetMagic(bool isMagic)
+        private bool magic;
+        public bool Magic
         {
-            if (isMagic)
+            get { return magic; }
+            set
             {
-                MagicMultiplier = 1.75M;
+                magic = value;
+                CalculateDamage();
             }
-            else
-            {
-                MagicMultiplier = 1M;
-            }
-
-            CalculateDamage();
         }
 
-        public void SetFlaming(bool isFlaming)
+        private bool flaming;
+        public bool Flaming
         {
-            CalculateDamage();
-            if (isFlaming)
+            get { return flaming; }
+            set
             {
-                Damage += FLAME_DAMAGE;
+                flaming = value;
+                CalculateDamage();
             }
+        }
+
+        private void CalculateDamage()
+        {
+            decimal magicMultiplier = 1M;
+            if (Magic) magicMultiplier = 1.75M;
+
+            Damage = BASE_DAMAGE;
+            Damage = (int)(Roll * magicMultiplier) + BASE_DAMAGE;
+            if (Flaming) Damage += FLAME_DAMAGE;
+        }
+
+        public SwordDamage(int startingRoll)
+        {
+            roll = startingRoll;
+            CalculateDamage();
         }
     }
 }
