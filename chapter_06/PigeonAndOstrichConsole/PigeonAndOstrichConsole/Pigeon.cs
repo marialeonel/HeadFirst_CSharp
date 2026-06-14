@@ -11,9 +11,10 @@ namespace PigeonAndOstrichConsole
             Egg[] eggs = new Egg[numberOfEggs];
             for ( int number = 0; number < numberOfEggs; number++)
             {
-                double size = random.NextDouble() * 2 + 1; 
-                string color = "white"; 
-                eggs[number] = new Egg(size, color);
+                if (Bird.Random.Next(4) == 0)
+                    eggs[number] = new BrokenEgg(Bird.Random.NextDouble() * 2 + 1, "white");
+                else
+                    eggs[number] = new Egg(Bird.Random.NextDouble() * 2 + 1, "white");
             }
 
             return eggs;

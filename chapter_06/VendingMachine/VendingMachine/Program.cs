@@ -1,1 +1,4 @@
-﻿Console.WriteLine("Hello, World!");
+﻿using VendingMachine;
+
+VendingMachine.VendingMachine vendingMachine = new AnimalFeedVendingMachine();
+Console.WriteLine(vendingMachine.Dispense(2.00M));

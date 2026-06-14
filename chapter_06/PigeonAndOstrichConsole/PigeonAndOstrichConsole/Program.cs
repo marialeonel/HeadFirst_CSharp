@@ -23,6 +23,7 @@ while (true)
     Egg[] eggs = bird.LayEggs(numberOfEggs);
     foreach (Egg egg in eggs)
     {
-        Console.WriteLine(egg.Description);
+        Console.WriteLine(egg.Description
+            );
     }
 }
