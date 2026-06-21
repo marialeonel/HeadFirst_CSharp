@@ -1,6 +1,6 @@
 ﻿namespace WeaponDamageConsole
 {
-    public class WeapondDamage
+    public abstract class WeapondDamage
     {
         public int Damage { get; protected set; }
         private int roll;
@@ -37,11 +37,7 @@
             }
         }
 
-        protected virtual void CalculateDamage()
-        {
-            //subclasses will override this method to calculate damage based on weapon type
-        }
-
+        protected abstract void CalculateDamage();
         public WeapondDamage(int startingRoll)
         {
             Roll = startingRoll;
