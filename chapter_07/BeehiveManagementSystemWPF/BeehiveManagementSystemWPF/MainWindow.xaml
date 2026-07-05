@@ -6,7 +6,12 @@
         xmlns:local="clr-namespace:BeehiveManagementSystemWPF"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
+    
+    <Window.Resources>
+        <local:Queen x:Key="queen" />
+    </Window.Resources>
+    
+    <Grid DataContext="{StaticResource queen}">
         <Grid.RowDefinitions>
             <RowDefinition Height="1*"/>
             <RowDefinition Height="4*"/>
@@ -30,6 +35,6 @@
 
         <Button Grid.Row="2" Click="WorkShift_Click" Content="Work the next shift" FontSize="18px" Margin="20"/>
         <Label Content="Queen's Report" HorizontalAlignment="Center" VerticalAlignment="Bottom" Grid.Column="1" FontSize="18" Margin="20,0"/>
-        <TextBox IsReadOnly="True" x:Name="statusReport" Margin="20" Grid.Row="1" Grid.RowSpan="2" Grid.Column="1"/>
+        <TextBox Text="{Binding StatusReport, Mode=OneWay}" IsReadOnly="True" x:Name="statusReport" Margin="20" Grid.Row="1" Grid.RowSpan="2" Grid.Column="1"/>
     </Grid>
 </Window>

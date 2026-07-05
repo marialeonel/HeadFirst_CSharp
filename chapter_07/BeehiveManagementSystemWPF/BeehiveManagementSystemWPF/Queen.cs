@@ -1,6 +1,8 @@
-﻿namespace BeehiveManagementSystemWPF
+﻿using System.ComponentModel;
+
+namespace BeehiveManagementSystemWPF
 {
-    public class Queen : Bee
+    public class Queen : Bee, INotifyPropertyChanged
     {
         public const float EGGS_PER_SHIFT = 0.45f;
         public const float HONEY_PER_UNASSIGNED_WORKER = 0.5f;
@@ -10,6 +12,7 @@
         private float eggs = 0;
         private float unassignedWorkers = 3;
 
+        public event PropertyChangedEventHandler? PropertyChanged;
 
         private void AddWorker(IWorker worker)
         {
@@ -44,6 +47,7 @@
             $"\nEgg count: {eggs:0.0}\nUnassigned workers: {unassignedWorkers:0.0}\n" +
             $"{WorkerStatus("Nectar Collector")}\n{WorkerStatus("Honey Manufacturer")}" +
             $"\n{WorkerStatus("Egg Care")}\nTOTAL WORKERS: {workers.Length}";
+            OnPropertyChanged("StatusReport");
         }
 
         private string WorkerStatus(string job)
@@ -81,6 +85,11 @@
             AssignBee("Nectar Collector");
             AssignBee("Honey Manufacturer");
             AssignBee("Egg Care");
+        }
+
+        protected void OnPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }
