@@ -1,3 +1,4 @@
 <Solution>
   <Project Path="JimmyLinq/JimmyLinq.csproj" />
+  <Project Path="JimmyLinqUnitTests/JimmyLinqUnitTests.csproj" Id="9bcda77c-b24f-4bc1-ae78-cbc259699247" />
 </Solution>
